@@ -1,18 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Food Delivery Service"
+            android:textColor="#0000aa"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World asasdasdasdsdassad!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/btnLogin"
+        android:layout_width="150dp"
+        android:layout_height="51dp"
+        android:layout_gravity="center"
+        android:textColor="#ffffff"
+        android:clickable="true"
+        android:text="Log In"
+        android:textSize="24dp"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:background="#000aaa"
+
+        android:textStyle="bold" />
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:gravity="center"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnSignup"
+            android:layout_width="150dp"
+            android:layout_height="51dp"
+            android:layout_gravity="center"
+            android:background="#41b3a3"
+            android:clickable="true"
+            android:text="Sign up"
+            android:textColor="#ffffff"
+
+            android:textSize="24dp"
+
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+</LinearLayout>
