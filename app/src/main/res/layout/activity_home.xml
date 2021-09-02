@@ -21,18 +21,10 @@
             android:orientation="vertical"
             android:layout_margin="40dp">
             <Button
-                android:id="@+id/buttonLogin"
+                android:id="@+id/buttonHome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
-                android:clickable="true"
-                android:background="#eecc00" />
-            <Button
-                android:id="@+id/buttonSignup"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="SignUp"
-                android:layout_marginTop="10dp"
+                android:text="Welcome Home"
                 android:clickable="true"
                 android:background="#eecc00" />
 
