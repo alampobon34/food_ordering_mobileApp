@@ -9,6 +9,10 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
+import edu.ewubd.food_ordering_mobileapp.Models.FoodItem;
+
 public class Database extends SQLiteOpenHelper {
     private static final String dbname = "food_ordering_app.db";
 
@@ -21,6 +25,9 @@ public class Database extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String user_query = "CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT,user_id VARCHAR(50) UNIQUE,email VARCHAR(255) UNIQUE,password VARCHAR(100))";
         db.execSQL(user_query);
+
+        String fooditem_query = "CREATE TABLE foodItems(id INTEGER PRIMARY KEY AUTOINCREMENT,name VARCHAR(100),description VARCHAR(200),price VARCHAR(100))";
+        db.execSQL(fooditem_query);
 
     }
 
@@ -75,6 +82,29 @@ public class Database extends SQLiteOpenHelper {
         }
 
     }
+
+    public ArrayList<FoodItem> get_foodItems(){
+        ArrayList<FoodItem> foodItems = new ArrayList<>();
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from foodItems",null);
+        if(cursor.moveToFirst()){
+            while(cursor.moveToFirst()){
+                FoodItem item = new FoodItem();
+                item.setName(cursor.getString(1));
+                item.setDescription(cursor.getString(2));
+                item.setPrice(cursor.getString(3));
+                item.setImage(R.drawable.burger);
+                foodItems.add(item);
+
+            }
+        }
+        cursor.close();
+        db.close();
+        return foodItems;
+    }
+
+
+
 
 
 }
