@@ -1,11 +1,14 @@
 package edu.ewubd.food_ordering_mobileapp.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +16,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import edu.ewubd.food_ordering_mobileapp.CartActivity;
+import edu.ewubd.food_ordering_mobileapp.Database;
+import edu.ewubd.food_ordering_mobileapp.HomeActivity;
+import edu.ewubd.food_ordering_mobileapp.LoginActivity;
 import edu.ewubd.food_ordering_mobileapp.Models.FoodItem;
 import edu.ewubd.food_ordering_mobileapp.R;
 
@@ -21,9 +28,15 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.viewho
     ArrayList<FoodItem> list;
     Context context;
 
-    public FoodItemAdapter(ArrayList<FoodItem> list, Context context) {
+    String userid ;
+
+
+
+    public FoodItemAdapter(ArrayList<FoodItem> list, Context context,String id) {
         this.list = list;
         this.context = context;
+        this.userid = id;
+
     }
 
     @NonNull
@@ -42,6 +55,31 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.viewho
         holder.price.setText(item.getPrice());
         holder.description.setText(item.getDescription());
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                String total = String.valueOf(Integer.valueOf(item.getPrice()) * 1);
+
+                Intent i = new Intent(context,CartActivity.class);
+                i.putExtra("user_id",getUserid());
+                i.putExtra("item_name",item.getName());
+                i.putExtra("price",item.getPrice());
+                i.putExtra("description",item.getDescription());
+                i.putExtra("image",item.getImage());
+                i.putExtra("quantity","1");
+                i.putExtra("total",total);
+                context.startActivity(i);
+
+            }
+
+        });
+
+
+
+
     }
 
     @Override
@@ -49,10 +87,11 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.viewho
         return list.size();
     }
 
+
+
     public class viewholder extends RecyclerView.ViewHolder {
         ImageView image;
         TextView name,price,description;
-
 
 
         public viewholder(@NonNull View itemView){
@@ -66,5 +105,13 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.viewho
 
         }
 
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 }

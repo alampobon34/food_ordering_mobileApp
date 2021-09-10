@@ -48,4 +48,5 @@ public class FoodItem {
     public void setImage(int image) {
         this.image = image;
     }
+
 }

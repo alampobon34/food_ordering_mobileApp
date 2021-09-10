@@ -9,22 +9,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Food_ordering_mobileApp">
-        <activity android:name=".MainActivity"  android:label="Food Ordering Application">
+        <activity android:name=".orderListActivity"></activity>
+        <activity
+            android:name=".CheckoutActivity"
+            android:label="Checkout Information" />
+        <activity
+            android:name=".CartActivity"
+            android:label="Cart Item" />
+        <activity
+            android:name=".addFoodItem"
+            android:label="Add Food Item" />
+        <activity
+            android:name=".AdminLogin"
+            android:label="Admin Login" />
+        <activity
+            android:name=".MainActivity"
+            android:label="Food Ordering Application">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"
-            android:label="Login"/>
-        <activity android:name=".SignUpActivity"
-            android:label="SignUp"
-            />
-
-        <activity android:name=".HomeActivity"
-            android:label="Home"
-            />
+        <activity
+            android:name=".LoginActivity"
+            android:label="Login" />
+        <activity
+            android:name=".SignUpActivity"
+            android:label="SignUp" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="Home" />
     </application>
 
 </manifest>

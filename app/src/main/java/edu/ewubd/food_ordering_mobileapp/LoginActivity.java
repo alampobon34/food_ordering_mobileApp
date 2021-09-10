@@ -55,7 +55,10 @@ public class LoginActivity extends AppCompatActivity {
                     Boolean flag = g.check_login(userID,password);
                     if(flag==true){
                         Intent i = new Intent(LoginActivity.this,HomeActivity.class);
+                        i.putExtra("userid",userID);
                         startActivity(i);
+                        finish();
+
                     }else{
                         Toast.makeText(LoginActivity.this,"Invalid User ID or Password",Toast.LENGTH_SHORT).show();
 

@@ -20,29 +20,34 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_margin="40dp">
+            <EditText
+                android:id="@+id/etUserId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter User ID"
+                android:gravity="center"
+                android:inputType="number|text"/>
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Password"
+                android:gravity="center"
+                android:inputType="numberPassword"/>
+            <CheckBox
+                android:id="@+id/checkboxRememberUserID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remember User ID " />
+
             <Button
                 android:id="@+id/buttonLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Login"
-                android:clickable="true"
-                android:background="#eecc00" />
-            <Button
-                android:id="@+id/buttonSignup"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="SignUp"
-                android:layout_marginTop="10dp"
-                android:clickable="true"
-                android:background="#eecc00" />
-            <Button
-                android:id="@+id/buttonAdmin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Admin Login"
                 android:layout_marginTop="10dp"
                 android:clickable="true"
-                android:background="#eecc00" />
+                android:background="@color/yellow" />
 
         </LinearLayout>
 

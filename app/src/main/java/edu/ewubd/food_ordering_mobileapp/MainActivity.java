@@ -39,5 +39,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        findViewById(R.id.buttonAdmin).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, edu.ewubd.food_ordering_mobileapp.AdminLogin.class);
+                startActivity(i);
+
+            }
+        });
     }
 }
